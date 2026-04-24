@@ -1,0 +1,29 @@
+{% extends 'main/loyan.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+     <div class="features">
+        <h1>{{ title }}</h1>
+        {% filter upper %}<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus quidem voluptatem quis maxime ratione nisi reprehenderit ducimus possimus dolores unde laudantium voluptatum similique et, nihil repellendus accusantium facilis ipsam vero.</p>{% endfilter %}
+
+        <button class="btn btn-warning">На стриницу про нас</button>
+        
+        {% for el in listen %}
+            {% if el == 'Hello' %}
+                {% filter upper %}
+                    <p>{{ el }}</p>
+                {% endfilter %}
+            {% endif %}
+        {% endfor %}      
+        
+        {% for el in obj %}
+            <p>{{ el }}</p>
+        {% endfor %}   
+
+        {% for el in listen %}
+            <p>{{ el|upper }}</p>
+        {% endfor %}   
+    </div>
+{% endblock %}
+

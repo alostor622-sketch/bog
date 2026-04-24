@@ -1,0 +1,17 @@
+{% extends 'main/loyan.html' %}
+
+{% block title %}Удаление статьи{% endblock %}
+    
+{% block content %}
+     <div class="features">
+        <h1>Удаление статьи</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            
+        
+            <button class="btn btn-success type="sumbit>Удалить статью</button>
+            <span>{{ error }}</span>
+       </form>
+    </div>
+{% endblock %}

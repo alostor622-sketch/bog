@@ -1,0 +1,28 @@
+{% extends 'main/loyan.html' %}
+
+{% block title %}Новости на сайте{% endblock %}
+    
+{% block content %}
+     <div class="features">
+        <h1>Новости на сайте</h1>
+        <!--{% filter upper %}<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus quidem voluptatem quis maxime ratione nisi reprehenderit ducimus possimus dolores unde laudantium voluptatum similique et, nihil repellendus accusantium facilis ipsam vero.</p>{% endfilter %}
+
+        <button class="btn btn-warning">На стриницу про нас</button>-->
+        
+        {% if news %}
+            {% for el in news %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.anons }}</p>
+                    <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Читать далее</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Нет записей!</p>
+        {% endif %}
+
+        {# Коментарий #}
+        <!--{{ news }}-->
+    </div>
+{% endblock %}
+
